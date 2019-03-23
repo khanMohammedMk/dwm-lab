@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jan 23 08:44:16 2019
+Created on sat feb 23 09:02:16 2019
 
-@author: aiktc
+@author: Mk
 """
 
 #importing the libraries
@@ -25,6 +25,5 @@ rules = apriori(transactions, min_support = 0.003 ,min_confidence = 0.2,min_lift
 results = list(rules)
 results_list = []
 for i in range(0, len(results)):
-    results_list.append('RULE:\t' + str(results[i][0]) + '\nSUPPORT:\t' +str(results[i][1]) + '\nCONF:\t' + str(results[i][2][0][2]) + '\nLIFT:\t'+str(results[i][2][0][3]))
-        
-    
+    results_list.append(str('RULE:\t' + str(results[i][0]) + '\nSUPPORT:\t' +str(results[i][1]) + '\nCONF:\t' + str(results[i][2][0][2]) + '\nLIFT:\t'+str(results[i][2][0][3])).replace('frozenset({','').replace('})',''))
+   
